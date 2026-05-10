@@ -19,7 +19,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: github/codeql-action/init@v3
+      - uses: github/codeql-action/init@v4
         with:
           languages: java-kotlin
       - uses: actions/setup-java@v4
@@ -28,4 +28,4 @@ jobs:
           java-version: 21
           cache: maven
       - run: ./mvnw test
-      - uses: github/codeql-action/analyze@v3
+      - uses: github/codeql-action/analyze@v4

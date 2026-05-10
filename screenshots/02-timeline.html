@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Compliance Event Ledger - Timeline</title>
+  <style>
+    body{margin:0;background:#091320;font-family:Segoe UI,Arial,sans-serif}
+    .frame{width:1600px;height:900px;padding:48px;box-sizing:border-box;background:#0a1321}
+    .panel{height:100%;border-radius:32px;border:1px solid #22365d;background:#111b31;padding:42px}
+    .eyebrow{letter-spacing:.24em;color:#78beff;font-size:22px;text-transform:uppercase}
+    h1{font:700 68px/1.05 Georgia,serif;color:#f2ead2;margin:18px 0 30px;max-width:1220px}
+    .timeline{display:grid;grid-template-columns:220px 1fr;gap:24px}
+    .date{color:#8db1d8;font-size:20px;padding-top:20px}
+    .event{background:#16233d;border:1px solid #28466f;border-radius:22px;padding:22px 26px}
+    .row{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+    .title{font:700 32px/1.1 Georgia,serif;color:#f5edd8}
+    .sev{font-size:16px;padding:8px 12px;border-radius:999px;color:#07111f;font-weight:700}
+    .critical{background:#ffb0c9}.high{background:#ffd89b}.medium{background:#9ec5ff}
+    .body{font-size:21px;line-height:1.4;color:#c7d0e1}
+    .meta{margin-top:12px;font-size:18px;color:#8fa2bf}
+  </style>
+</head>
+<body>
+<div class="frame"><div class="panel">
+  <div class="eyebrow">Entity Timeline</div>
+  <h1>Acme Data Processor shows why exceptions, overdue remediation, and ownership all need to live on the same record.</h1>
+  <div class="timeline">
+    <div class="date">May 2</div>
+    <div class="event">
+      <div class="row"><div class="title">Retention policy exception approved</div><div class="sev high">HIGH</div></div>
+      <div class="body">Legal allowed a temporary retention exception while the sub-processor review remains open.</div>
+      <div class="meta">Owner lane: Compliance Operations · Due: May 28</div>
+    </div>
+    <div class="date">May 5</div>
+    <div class="event">
+      <div class="row"><div class="title">Encryption key rotation still incomplete</div><div class="sev critical">CRITICAL</div></div>
+      <div class="body">The compensating control exists, but the permanent remediation is overdue and now blocks production certification.</div>
+      <div class="meta">Owner lane: Security Engineering · Due: May 9</div>
+    </div>
+    <div class="date">May 10</div>
+    <div class="event">
+      <div class="row"><div class="title">Leadership escalation recommended</div><div class="sev medium">MEDIUM</div></div>
+      <div class="body">The combined exception and overdue remediation profile means the entity should not stay buried in a normal queue.</div>
+      <div class="meta">Generated from the analysis route</div>
+    </div>
+  </div>
+</div></div>
+</body>
+</html>

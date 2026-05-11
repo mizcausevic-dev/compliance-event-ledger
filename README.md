@@ -121,8 +121,15 @@ $env:Path = "$env:JAVA_HOME\bin;$env:Path"
 
 Then open:
 
-- `http://127.0.0.1:8091/`
-- `http://127.0.0.1:8091/docs`
+- `http://127.0.0.1:4311/`
+- `http://127.0.0.1:4311/docs`
+
+If that port is already occupied, choose another one before running:
+
+```powershell
+$env:PORT = "4315"
+.\mvnw.cmd spring-boot:run
+```
 
 ## Validation
 

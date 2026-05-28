@@ -4,6 +4,12 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    # Block Spring Boot major-version bumps: 4.0 restructured the test
+    # autoconfigure jar and breaks our controller tests. Re-enable after
+    # migrating tests to the 4.x API.
+    ignore:
+      - dependency-name: "org.springframework.boot:spring-boot-starter-parent"
+        update-types: ["version-update:semver-major"]
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:

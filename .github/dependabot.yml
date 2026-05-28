@@ -4,6 +4,16 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    # Block Spring Boot major-version bumps: 4.0 restructured the test
+    # autoconfigure jar and breaks our controller tests. Re-enable after
+    # migrating tests to the 4.x API.
+    ignore:
+      - dependency-name: "org.springframework.boot:spring-boot-starter-parent"
+        update-types: ["version-update:semver-major"]
+      # springdoc 3.x targets Spring Boot 4 / Jakarta 11. Stay on 2.x
+      # while the parent is pinned to Spring Boot 3.5.x.
+      - dependency-name: "org.springdoc:springdoc-openapi-starter-webmvc-ui"
+        update-types: ["version-update:semver-major"]
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:

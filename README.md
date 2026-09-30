@@ -1,10 +1,10 @@
 # Compliance Event Ledger
 
-Compliance Event Ledger is a Java and Spring Boot service for tracking policy actions, approvals, exceptions, remediations, and review pressure in one audit-friendly event stream. It models governance activity as a time-ordered ledger instead of a loose pile of tickets, which makes ownership, severity, and deadline pressure much easier to inspect.
+Compliance Event Ledger is a Java and Spring Boot **read-only sample service** for exploring policy actions, approvals, exceptions, remediations, and review pressure in a time-ordered event list. It uses six bundled synthetic records in memory. It does not ingest, persist, or prove the integrity of real audit events.
 
 ## Executive Summary
 
-This project shows how governance data can be structured as an operational timeline instead of static reporting. Each event captures severity, ownership lane, tags, due dates, and status so teams can retrieve a single event, inspect an entity timeline, summarize the current ledger, and run a pressure analysis when an entity looks unstable.
+This project shows how governance data could be structured as an operational timeline. Each sample event has severity, ownership lane, tags, due date, and status so users can retrieve a sample event, inspect an entity timeline, summarize the fixture, and run a pressure analysis on supplied inputs.
 
 ## Portfolio Takeaway
 
@@ -18,10 +18,10 @@ This project shows how governance data can be structured as an operational timel
 | Area | Details |
 | --- | --- |
 | Language | Java 21 |
-| Framework | Spring Boot 3.5 |
+| Framework | Spring Boot 4.0.6 |
 | API Docs | Swagger UI at `/docs` |
 | Test Stack | JUnit 5, Spring Boot Test, MockMvc |
-| Runtime Shape | In-memory event ledger with analysis service |
+| Runtime Shape | Read-only synthetic event fixture with analysis service; loopback bind by default |
 | Core Domains | policy actions, approvals, exceptions, remediations, reviews, alerts |
 
 ## API Surface
@@ -96,19 +96,11 @@ Response:
 }
 ```
 
-## Screenshots
+## Running service capture
 
-### Control Room
-![Control Room](./screenshots/01-hero.png)
+The image below is a browser capture of this project's locally running `/docs` route on 2026-09-29. The API serves synthetic sample records. The prior static marketing mockups were removed because they showed stale counts and implied a user interface that this backend does not serve.
 
-### Entity Timeline
-![Entity Timeline](./screenshots/02-timeline.png)
-
-### Ledger Analysis
-![Ledger Analysis](./screenshots/03-analysis.png)
-
-### Validation Proof
-![Validation Proof](./screenshots/04-proof.png)
+![Swagger UI for the locally running sample ledger API, with its synthetic-data disclosure](./screenshots/01-api-docs.png)
 
 ## Run Locally
 
@@ -144,7 +136,7 @@ $env:Path = "$env:JAVA_HOME\bin;$env:Path"
 ## Tech Stack
 
 [![Java 21](https://img.shields.io/badge/Java-21-0f172a?style=for-the-badge&logo=openjdk&logoColor=f8fafc)](https://www.oracle.com/java/)
-[![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.5-0f172a?style=for-the-badge&logo=springboot&logoColor=7ee787)](https://spring.io/projects/spring-boot)
+[![Spring Boot](https://img.shields.io/badge/Spring_Boot-4.0.6-0f172a?style=for-the-badge&logo=springboot&logoColor=7ee787)](https://spring.io/projects/spring-boot)
 [![Swagger](https://img.shields.io/badge/OpenAPI-Docs-0f172a?style=for-the-badge&logo=swagger&logoColor=85ea2d)](https://swagger.io/specification/)
 [![JUnit 5](https://img.shields.io/badge/JUnit-5-0f172a?style=for-the-badge&logo=junit5&logoColor=facc15)](https://junit.org/junit5/)
 [![Maven](https://img.shields.io/badge/Maven-Wrapper-0f172a?style=for-the-badge&logo=apachemaven&logoColor=f8fafc)](https://maven.apache.org/)

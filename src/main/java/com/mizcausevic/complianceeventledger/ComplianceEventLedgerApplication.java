@@ -1,5 +1,7 @@
 package com.mizcausevic.complianceeventledger;
 
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.info.Info;
 import java.net.BindException;
 
 import org.springframework.boot.SpringApplication;
@@ -7,6 +9,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.server.PortInUseException;
 
 @SpringBootApplication
+@OpenAPIDefinition(info = @Info(
+        title = "Compliance Event Ledger",
+        version = "0.1.0-demo",
+        description = "Read-only API over six synthetic, in-memory events. Not an audit record or production ledger."
+))
 public class ComplianceEventLedgerApplication {
 
 	public static void main(String[] args) {

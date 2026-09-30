@@ -2,8 +2,8 @@
 
 Compliance Event Ledger is structured as a Spring Boot service with three main responsibilities:
 
-1. store and retrieve immutable-style governance events
-2. aggregate events by entity into an auditable timeline
+1. retrieve bundled synthetic governance events from memory
+2. aggregate those events by entity into a sample timeline
 3. score active governance pressure into an operational next step
 
 ## Components
@@ -48,4 +48,4 @@ The score is reduced slightly when the entity already has multiple meaningful co
 
 ## Why This Shape Works
 
-This design keeps the repo believable as a backend artifact. It shows audit retrieval, operational scoring, and governance decisioning without pretending to be a full persistence or workflow platform.
+This design demonstrates timeline retrieval and operational scoring. It does not persist events or provide audit-grade integrity.
